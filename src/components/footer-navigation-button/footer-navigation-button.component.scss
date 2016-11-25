@@ -1,0 +1,25 @@
+:host {
+  button {
+    -webkit-appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    transition: all 150ms ease-in-out;
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}
+
+:host:first-child{
+  flex: 1 1 35%;
+  text-align: left;
+  margin-right: auto;
+}
+
+:host:last-child{
+  flex: 1 1 35%;
+  text-align: right;
+  margin-left: auto;
+}

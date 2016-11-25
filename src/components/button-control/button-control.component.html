@@ -1,0 +1,16 @@
+<button [id]="id"
+        [type]="type || 'button'"
+        [disabled]="disabled"
+        [style.width]="width"
+        [style.color]="getColor(
+          (colors$ | async).primaryText, (colors$ | async).primary
+        )"
+        [style.backgroundColor]="getColor(
+          (colors$ | async).primary, (colors$ | async).primaryText
+        )"
+        (click)="handleClick()"
+        class="button btn rounded-xl h4 px2 py1 {{className}}">
+  <ng-content></ng-content>
+  <span *ngIf="showChevron"
+        class="fa fa-chevron-right"></span>
+</button>

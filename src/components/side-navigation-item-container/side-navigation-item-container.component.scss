@@ -1,0 +1,13 @@
+:host {
+  display: block;
+
+  &.grow {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+  }
+
+  &.shrink {
+    flex-shrink: 0;
+  }
+}

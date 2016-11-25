@@ -1,0 +1,1 @@
+export const isEmailAddressRegExp: RegExp = /^\S+@\S+\.\S+$/;

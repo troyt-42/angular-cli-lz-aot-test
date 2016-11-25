@@ -1,0 +1,8 @@
+<nav [ngClass]="{visible: show}"
+     [style.color]="colors.contentText"
+     class="sideNavigation">
+  <span class="fa fa-times-thin"
+        [style.color]="colors.contentText | lightenColor:40"
+        (click)="closeSideNavigation()"></span>
+  <ng-content></ng-content>
+</nav>

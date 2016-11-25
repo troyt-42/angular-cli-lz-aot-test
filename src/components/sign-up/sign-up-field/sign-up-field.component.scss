@@ -1,0 +1,21 @@
+:host {
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  input {
+    margin-bottom: 1rem;
+  }
+
+  .valid-icon {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+  }
+
+  .field-container {
+    position: relative;
+  }
+}

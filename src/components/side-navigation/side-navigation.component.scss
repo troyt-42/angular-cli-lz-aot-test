@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+
+:host {
+  display: block;
+
+  > nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    margin: 0;
+    white-space: nowrap;
+
+    width: 0;
+    height: 100%;
+
+    background: white;
+
+    position: absolute;
+    z-index: 1;
+
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
+
+    &.visible {
+      width: 100%;
+
+      @media screen and (min-width: $sideNavigationBarBreakpoint) {
+        width: $sideNavigationWidth;
+      }
+    }
+
+    .fa.fa-times-thin {
+      display: block;
+      flex-shrink: 0;
+      padding: 1rem 1.75rem 1.5rem 1.75rem;
+      font-size: 2.5rem;
+      text-align: right;
+      cursor: pointer;
+
+      -webkit-tap-highlight-color: transparent;
+
+      &:before {
+        content: '\00d7';
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<table class="assetAllocationLegend {{bottomMarginClass}}">
+  <tbody>
+    <tr *ngFor="let assetAllocation of assetAllocations">
+      <td [style.backgroundColor]="assetAllocation.color"
+          class="color"></td>
+      <td class="percent"
+          [innerHtml]="assetAllocation.allocationPercent | percent"></td>
+      <td>{{assetAllocation.assetClassName}}</td>
+    </tr>
+  </tbody>
+</table>

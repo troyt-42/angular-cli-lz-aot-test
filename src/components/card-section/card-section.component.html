@@ -1,0 +1,8 @@
+<section class="flex flex-column px2 py3 height-100"
+         [style.backgroundColor]="backgroundColor ? backgroundColor : 'inherit'">
+  <card-section-header *ngIf="headingLocalizationKey">
+    <span [localize]="headingLocalizationKey"></span>
+  </card-section-header>
+
+  <ng-content></ng-content>
+</section>

@@ -1,0 +1,8 @@
+<div class="card"
+     [ngClass]="{single: isSingle}"
+     [ngStyle]="{
+       color: colors.contentText,
+       backgroundColor: colors.contentBackground | lightenColor:3
+     }">
+  <ng-content></ng-content>
+</div>

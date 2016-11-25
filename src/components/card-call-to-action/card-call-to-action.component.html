@@ -1,0 +1,14 @@
+<div [style.color]="colors.primaryText"
+     [style.background]="colors.primary"
+     class="flex items-center px3 py2 {{justifyClassName}}">
+  <span *ngIf="localizedTextKey"
+        [localize]="localizedTextKey"
+        class="mr1"></span>
+
+  <button-control *ngIf="localizedButtonLabelKey"
+                  [showChevron]="true"
+                  [invertColors]="true"
+                  (click)="onButtonPressed()">
+    <span [localize]="localizedButtonLabelKey"></span>
+  </button-control>
+</div>

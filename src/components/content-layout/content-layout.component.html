@@ -1,0 +1,13 @@
+<header>
+  <ng-content select="[header]"></ng-content>
+</header>
+<main [ngClass]="{
+    p2: mainPadding,
+    withHeaderAndFooterHeight: hasFooter,
+    withHeaderHeight: !hasFooter
+  }">
+  <ng-content select="[content]"></ng-content>
+</main>
+<footer class="footer-shadow bg-white">
+  <ng-content select="[footer]"></ng-content>
+</footer>

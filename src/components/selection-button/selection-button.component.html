@@ -1,0 +1,9 @@
+<div class="selectionButton rounded-xl p2 cursor"
+     [ngStyle]="theme"
+     (mouseenter)="setHoverColors()"
+     (mouseleave)="setColors()"
+     (click)="setColors()">
+  <span class="block h5 regular ml1 cursor">
+    <ng-content></ng-content>
+  </span>
+</div>

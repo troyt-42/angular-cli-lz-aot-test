@@ -1,0 +1,19 @@
+<div [ngSwitch]="currentState"
+     class="height-100">
+  <div *ngSwitchCase="State.Loading"
+       class="height-100">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+  <div *ngSwitchCase="State.Error"
+       class="height-100">
+    <ng-content select="[error]"></ng-content>
+  </div>
+  <div *ngSwitchCase="State.Complete"
+       class="height-100">
+    <ng-content select="[complete]"></ng-content>
+  </div>
+</div>

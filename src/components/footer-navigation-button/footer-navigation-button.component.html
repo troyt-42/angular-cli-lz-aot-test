@@ -1,0 +1,8 @@
+<button type="button"
+        [disabled]="disabled"
+        [ngStyle]="theme"
+        (mouseenter)="setHoverColors()"
+        (mouseout)="setColors()"
+        class="btn py2 px3 h5 regular">
+  <ng-content></ng-content>
+</button>

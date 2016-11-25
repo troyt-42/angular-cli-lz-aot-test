@@ -1,0 +1,21 @@
+<loading-container [loadable]="loadable">
+  <div error
+       class="height-100 p3">
+    <h2>
+      Whoops, something went wrong...
+    </h2>
+    <p *ngIf="isErrorAnErrorObject">
+      Error: <b>{{loadable.error.message}}</b>
+    </p>
+    <p *ngIf="isErrorAString">
+      Error: <b>{{loadable.error}}</b>
+    </p>
+    <pre *ngIf="isErrorAnErrorObject">
+      {{loadable.error.stack}}
+    </pre>
+  </div>
+  <div complete
+       class="height-100">
+    <ng-content></ng-content>
+  </div>
+</loading-container>

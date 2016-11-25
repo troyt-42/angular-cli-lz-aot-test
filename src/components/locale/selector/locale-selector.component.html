@@ -1,0 +1,11 @@
+<ul class="list-reset flex justify-center m0 height-100 locales">
+  <li *ngFor="let locale of locales; let isLast = last"
+      [ngClass]="{mr2: !isLast}"
+      class="cursor">
+    <a [class.bold]="isCurrentLocale(locale)"
+       [style.color]="getLocaleColor(locale)"
+       (click)="selectLocale(locale.isocode)">
+      {{locale.description}}
+    </a>
+  </li>
+</ul>

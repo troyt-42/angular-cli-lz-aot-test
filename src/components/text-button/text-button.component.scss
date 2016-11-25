@@ -1,0 +1,9 @@
+:host {
+  display: block;
+
+  -webkit-tap-highlight-color: transparent;
+
+  a[disabled="true"] {
+    opacity: 0.2;
+  }
+}

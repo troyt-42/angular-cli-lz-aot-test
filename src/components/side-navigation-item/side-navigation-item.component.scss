@@ -1,0 +1,18 @@
+:host {
+  .side-navigation-item {
+    padding: 1rem 3rem;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    -webkit-tap-highlight-color: transparent;
+
+    &.active {
+      background: rgba(0, 0, 0, .10);
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, .05);
+    }
+  }
+}

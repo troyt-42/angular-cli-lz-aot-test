@@ -1,0 +1,1 @@
+export type HierarchicalStringMap = Map<string, Map<string, string> | string>;

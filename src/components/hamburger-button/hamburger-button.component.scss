@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  position: absolute;
+  left: 0;
+
+  input#hamburgerButton {
+    display: none;
+  }
+
+  input#hamburgerButton + label {
+    padding: 0 0.75rem 0 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+}

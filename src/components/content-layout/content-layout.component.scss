@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  width: 100%;
+  height: 100%;
+
+  > header,
+  > footer {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  > main {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+  }
+
+  main.withHeaderAndFooterHeight {
+    height: calc(100vh - #{$navigationHeight} - #{$footerHeight});
+  }
+
+  main.withHeaderHeight {
+    height: calc(100vh - #{$navigationHeight});
+  }
+}

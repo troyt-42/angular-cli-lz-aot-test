@@ -1,0 +1,13 @@
+<label>
+  <div class="flex"
+       [formGroup]="formGroup">
+    <div class="mr1">
+      <input type="checkbox"
+             id="{{id}}"
+             formControlName="{{id}}">
+    </div>
+    <span>
+      <ng-content></ng-content>
+    </span>
+  </div>
+</label>

@@ -1,0 +1,7 @@
+<input type="checkbox"
+       id="hamburgerButton" />
+<label for="hamburgerButton"
+       [style.color]="colors.contentText | lightenColor:40"
+       (click)="toggleMenu()">
+  <span class="fa fa-bars"></span>
+</label>

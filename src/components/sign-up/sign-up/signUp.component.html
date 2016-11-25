@@ -1,0 +1,104 @@
+<div class="p2"
+     namespace="signUp">
+  <error-message *ngIf="error">
+    {{error.message}}
+  </error-message>
+
+  <form [formGroup]="signUpForm"
+        (ngSubmit)="submit()">
+    <sign-up-field id="email"
+                   labelLocalizationKey="emailLabel"
+                   placeholder="{{'signUp/emailPlaceholder' | localize}}"
+                   inputType="text"
+                   [formGroup]="signUpForm"
+                   [colors]="colors"
+                   [valid]="email.valid"></sign-up-field>
+    <error-message *ngIf="email.touched && email.hasError('required')"
+                   [colors]="colors">
+      <span localize="emailRequired"></span>
+    </error-message>
+    <error-message *ngIf="email.touched && email.hasError('pattern')"
+                   [colors]="colors">
+      <span localize="emailFormat"></span>
+    </error-message>
+
+    <div *ngIf="showUsername">
+      <sign-up-field id="username"
+                     labelLocalizationKey="usernameLabel"
+                     placeholder="{{'signUp/usernamePlaceholder' | localize}}"
+                     inputType="text"
+                     [formGroup]="signUpForm"
+                     [colors]="colors"
+                     [valid]="username.valid"></sign-up-field>
+    </div>
+
+    <sign-up-field id="password"
+                   labelLocalizationKey="passwordLabel"
+                   placeholder="{{'signUp/passwordPlaceholder' | localize}}"
+                   [inputType]="passwordType"
+                   [formGroup]="signUpForm"
+                   [colors]="colors"
+                   [valid]="password.valid"
+                   hasPasswordVisibilityButton="true"
+                   (visibleChanges)="changePasswordVisibility($event)"></sign-up-field>
+    <ul class="passwordPolicyErrorMessages">
+      <password-policy-error-message *ngIf="passwordPolicy.length"
+                                     [hasError]="password.hasError('passwordLength')"
+                                     [colors]="colors">
+        {{'signUp/passwordLength' | localize:length:length}}
+      </password-policy-error-message>
+      <password-policy-error-message *ngIf="passwordPolicy.lowerCase"
+                                     [hasError]="password.hasError('passwordLowerCase')"
+                                     [colors]="colors">
+        <span localize="passwordLowerCase"></span>
+      </password-policy-error-message>
+      <password-policy-error-message *ngIf="passwordPolicy.upperCase"
+                                     [hasError]="password.hasError('passwordUpperCase')"
+                                     [colors]="colors">
+        <span localize="passwordUpperCase"></span>
+      </password-policy-error-message>
+      <password-policy-error-message *ngIf="passwordPolicy.numberOfDigits"
+                                     [hasError]="password.hasError('passwordNumberOfDigits')"
+                                     [colors]="colors">
+        {{'signUp/passwordNumberOfDigits' | localize:passwordPolicy.numberOfDigits}}
+      </password-policy-error-message>
+      <password-policy-error-message *ngIf="passwordPolicy.specialCharacters"
+                                     [hasError]="password.hasError('passwordSpecialCharacter')"
+                                     [colors]="colors">
+        <span localize="passwordSpecialCharacter"></span>
+      </password-policy-error-message>
+    </ul>
+
+    <sign-up-field id="confirmPassword"
+                   labelLocalizationKey="passwordConfirmLabel"
+                   [inputType]="passwordType"
+                   [formGroup]="signUpForm"
+                   [colors]="colors"
+                   [valid]="confirmPassword.valid"></sign-up-field>
+
+    <error-message *ngIf="confirmPassword.touched && confirmPassword.hasError('mismatchedPasswords')"
+                   [colors]="colors">
+      <span localize="passwordMismatch"></span>
+    </error-message>
+
+    <div class="col-12 mb3">
+      <checkbox id="consentForEmailNotification"
+                [formGroup]="signUpForm">
+        <span class="h5" localize="consentForEmailNotification"></span>
+      </checkbox>
+    </div>
+
+    <div class="col-12">
+      <button-control type="submit"
+                      width="100%"
+                      [disabled]="!signUpForm.valid">
+        <span [localize]="submitLocalizationKey"></span>
+      </button-control>
+    </div>
+    <a *ngIf="showSkip"
+       class="regular right mt2 text-decoration-none gray"
+       style="cursor: pointer;"
+       localize="skip"
+       (click)="skip.emit()"></a>
+  </form>
+</div>

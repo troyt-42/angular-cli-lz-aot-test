@@ -1,0 +1,12 @@
+:host {
+  display: block;
+
+  .user-info-container {
+    padding: 1rem 3rem;
+    border-bottom: 1px solid;
+
+    .name {
+      font-weight: bold;
+    }
+  }
+}

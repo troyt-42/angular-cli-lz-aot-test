@@ -1,0 +1,13 @@
+<div [ngClass]="{
+      mx2: !center,
+      pl1: !center,
+      bold: bold,
+      regular: !bold,
+      leftAlign: !center,
+      centerAlign: center
+    }"
+    [ngStyle]="{color: colors.contentText}"
+    class="{{bottomMarginClass}} {{fontSizeClass}}">
+  <ng-content></ng-content>
+</div>
+
