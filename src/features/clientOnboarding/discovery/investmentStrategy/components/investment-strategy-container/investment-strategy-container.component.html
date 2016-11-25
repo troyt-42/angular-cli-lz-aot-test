@@ -1,0 +1,7 @@
+<generic-loading-container [loadable]="investingProfile$ | async"
+                           namespace="investmentStrategy">
+  <investment-strategy-selection [investingProfile]="investingProfile$ | async"
+                                 [profile]="profile$ | async"
+                                 [colors]="colors$ | async">
+  </investment-strategy-selection>
+</generic-loading-container>

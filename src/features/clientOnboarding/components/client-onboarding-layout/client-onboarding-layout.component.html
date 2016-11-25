@@ -1,0 +1,17 @@
+<content-layout [colors]="colors">
+  <navigator header
+             testid="navigator"
+             [color]="contentBackgroundColor$ | async">
+    <logo *ngIf="isTableOfContents()"
+          routerLink="/"
+          class="cursor mx-auto"></logo>
+
+    <div *ngIf="!isTableOfContents()"
+         routerLink="/clientOnboarding/tableOfContents"
+         class="flex items-center justify-center cursor">
+      <step-number [colors]="colors$ | async"></step-number>
+      <selected-investing-goal [profile]="profile$ | async"></selected-investing-goal>
+    </div>
+  </navigator>
+  <router-outlet content></router-outlet>
+</content-layout>

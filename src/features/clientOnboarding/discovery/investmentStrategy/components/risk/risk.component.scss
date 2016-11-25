@@ -1,0 +1,38 @@
+:host {
+  .riskMeter,
+  .riskLegend {
+    margin: 0 auto 2rem auto;
+  }
+
+  .riskMeter {
+    min-width: 175px;
+    max-width: 400px;
+
+    @media screen and (min-width: 600px) {
+      width: 80%;
+    }
+
+    span {
+      display: inline-block;
+      padding: 0.5rem 0;
+    }
+  }
+
+  table.riskLegend {
+    border-collapse: separate;
+    border-spacing: .5rem;
+
+    td {
+      padding: 0 0.5rem;
+      text-align: left;
+    }
+
+    td.color {
+      width: 1.25rem;
+    }
+
+    td.percent {
+      font-weight: bold;
+    }
+  }
+}

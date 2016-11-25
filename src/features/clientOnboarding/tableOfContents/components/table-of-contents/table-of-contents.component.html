@@ -1,0 +1,9 @@
+<section namespace="tableOfContents"
+         class="overflow-hidden bg-white">
+
+  <table-of-contents-item *ngFor="let item of items;"
+                          [id]="item.state.id"
+                          [item]="item">
+  </table-of-contents-item>
+
+</section>

@@ -1,0 +1,6 @@
+<span class="fa fa-file-text"></span>
+<span *ngIf="totalNumberOfUnreadDocuments > 0"
+      class="totalUnread"
+      [style.color]="colors.primaryText"
+      [style.background]="colors.error">{{totalNumberOfUnreadDocuments}}</span>
+<span class="fa fa-caret-down"></span>

@@ -1,0 +1,9 @@
+<instructions localizedInstructionsKey="instructions"></instructions>
+
+<carousel cardSectionEqualizer>
+  <model-portfolio *ngFor="let modelPortfolio of modelPortfolios"
+                   #carouselItem
+                   [modelPortfolio]="modelPortfolio"
+                   [colors]="colors">
+  </model-portfolio>
+</carousel>

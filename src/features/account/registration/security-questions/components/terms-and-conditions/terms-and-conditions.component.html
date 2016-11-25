@@ -1,0 +1,9 @@
+
+<!-- Must be split into 3 localization strings since the link needs dynamic color -->
+<span localize="termsAndConditionsBeforeLink"></span>
+<a [attr.href]="url"
+   [style.color]="colors.primary"
+   target="_blank">
+  <span localize="termsAndConditionsLink"></span>
+</a>
+<span localize="termsAndConditionsAfterLink"></span>

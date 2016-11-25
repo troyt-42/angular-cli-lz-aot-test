@@ -1,0 +1,8 @@
+<div *ngFor="let answerOption of question.answerOptions"
+     class="mb1"
+     (click)="selectAnswerOption(answerOption)">
+  <answer-option [isAnswered]="isAnswerOptionSelected(answerOption)"
+                 [model]="answerOption"
+                 [colors]="colors">
+  </answer-option>
+</div>

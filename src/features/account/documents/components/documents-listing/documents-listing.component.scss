@@ -1,0 +1,29 @@
+:host {
+  display: block;
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.rows {
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 600px) {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    li:last-child {
+      border-bottom: 1px solid;
+    }
+  }
+
+  ul.grid {
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+}

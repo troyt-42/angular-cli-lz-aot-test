@@ -1,0 +1,39 @@
+<form [formGroup]="listFormGroup"
+      (ngSubmit)="submit()">
+  <div formArrayName="listForms">
+    <security-question-list-item
+      *ngFor="let item of registration.securityQuestions.list; let i = index; trackBy: trackByItem"
+      [listItem]="item"
+      [listItemIndex]="i"
+      [colors]="colors"
+      [formArray]="listForms"
+      [securityQuestions]="registration.securityQuestions.questions"
+      [unselectedSecurityQuestions]="unselectedSecurityQuestions"
+      [canRemoveQuestions]="canRemoveQuestions"
+      (remove)="removeQuestion(i)"
+      (selectedSecurityQuestionChanged)="selectedSecurityQuestionChanged(i, $event)"
+      (answerChanged)="answerChanged(i, $event)"></security-question-list-item>
+  </div>
+
+  <text-button *ngIf="canAddQuestions"
+               [color]="colors.primary"
+               (onClick)="addQuestion()"
+               class="mb3 block">
+    <span localize="addQuestion"></span>
+  </text-button>
+
+  <terms-and-conditions url="http://pinnaclewealthbrokers.com/terms-of-use"
+                        [colors]="colors">
+  </terms-and-conditions>
+
+  <activation-error [error]="registration.activation.error"
+                    [colors]="colors"></activation-error>
+
+  <div class="register-button-container">
+    <button-control type="submit"
+                    width="100%"
+                    [disabled]="!listFormGroup.valid || registration.activation.isLoading">
+      <span localize="register"></span>
+    </button-control>
+  </div>
+</form>

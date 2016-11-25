@@ -1,0 +1,19 @@
+<heading [colors]="colors"
+         bottomMarginClass="mb2"
+         fontSizeClass="h3">
+  {{question.label}}
+</heading>
+
+<h5 *ngIf="isCheckboxInput()"
+    localize="checkbox"
+    class="m2 pl1 leftAlign muted"></h5>
+
+<answer-options *ngIf="isSelectableUsingButtons()"
+                [question]="question"
+                [answeredOptions]="answeredOptions"
+                [colors]="colors"
+                (answerChanged)="onAnswerChanged($event)"></answer-options>
+<slider-question-input *ngIf="isSliderInput()"
+                       [question]="question"
+                       [value]="answeredValue"
+                       (answerChanged)="onAnswerChanged($event)"></slider-question-input>

@@ -1,0 +1,9 @@
+<ul [attr.class]="documents.view"
+    [style.borderColor]="colors.contentText | lightenColor:50">
+  <li *ngFor="let file of files"
+      [style.borderColor]="colors.contentText | lightenColor:50">
+    <document-file [file]="file"
+                   [colors]="colors"
+                   [type]="documents.view"></document-file>
+  </li>
+</ul>

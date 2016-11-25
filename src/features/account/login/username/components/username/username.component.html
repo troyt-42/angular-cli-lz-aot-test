@@ -1,0 +1,38 @@
+<card class="width-100"
+      [colors]="colors">
+  <form [formGroup]="usernameForm"
+        (ngSubmit)="next()"
+        class="width-100">
+      <div class="width-100 flex flex-column items-start px2 py3">
+        <label for="username"
+           localize="username"
+           class="mb1"></label>
+        <input id="username"
+               class="col-12 mb1 input"
+               type="text"
+               formControlName="username" />
+        <div class="flex">
+          <input id="remember"
+                 type="checkbox"
+                 formControlName="remember" />
+          <label for="remember"
+                 localize="remember"
+                 class="mb1 h5"></label>
+        </div>
+      </div>
+  </form>
+</card>
+<button-control [showChevron]="false"
+                (onClick)="next()"
+                [disabled]="!usernameForm.valid"
+                width="100%"
+                className="h4 regular px3 py2">
+  <span localize="next"></span>
+</button-control>
+
+<text-button [color]="colors.primary"
+             class="forgot"
+             (onClick)="navigateToForgotUsername()">
+  <span localize="forgotUsername"></span>
+</text-button>
+

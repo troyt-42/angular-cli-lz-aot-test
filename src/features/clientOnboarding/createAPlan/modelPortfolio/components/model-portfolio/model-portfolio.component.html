@@ -1,0 +1,41 @@
+<card [colors]="colors"
+      [isSingle]="isSingle">
+  <card-section class="description"
+                headingLocalizationKey="title">
+    <model-portfolio-description [modelPortfolio]="modelPortfolio"
+                                 [colors]="colors"
+                                 [tableColor]="tableColor"></model-portfolio-description>
+  </card-section>
+
+  <card-call-to-action localizedButtonLabelKey="callToAction"
+                       [colors]="colors"
+                       (buttonPressed)="continue()">
+  </card-call-to-action>
+
+  <card-section class="historicalPerformance"
+                headingLocalizationKey="historicalPerformanceHeading">
+    <model-portfolio-historical-performance [ror]="modelPortfolio.ror"
+                                            [tableColor]="tableColor">
+    </model-portfolio-historical-performance>
+  </card-section>
+
+  <card-section class="assetAllocation"
+                headingLocalizationKey="assetAllocationHeading"
+                [backgroundColor]="colors.contentBackground">
+    <asset-allocation [labels]="assetAllocationLabels"
+                      [percentages]="assetAllocationPercentages"
+                      bottomMarginClass="mb0"></asset-allocation>
+
+    <asset-allocation-legend [assetAllocatable]="modelPortfolio"></asset-allocation-legend>
+  </card-section>
+
+  <card-section class="fees">
+    <model-portfolio-fees [funds]="modelPortfolio.investmentList"
+                          [tableColor]="tableColor"></model-portfolio-fees>
+  </card-section>
+
+  <card-call-to-action localizedButtonLabelKey="callToAction"
+                       [colors]="colors"
+                       (buttonPressed)="continue()">
+  </card-call-to-action>
+</card>

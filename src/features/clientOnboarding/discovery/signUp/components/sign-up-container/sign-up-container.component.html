@@ -1,0 +1,8 @@
+<generic-loading-container [loadable]="passwordPolicy$ | async">
+  <sign-up [passwordPolicy]="passwordPolicy$ | async"
+           [error]="(userSignUp$ | async).error"
+           [colors]="colors$ | async"
+           (signUp)="signUp($event)"
+           showSkip="true"
+           (skip)="nextStep()"></sign-up>
+</generic-loading-container>

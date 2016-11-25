@@ -1,0 +1,26 @@
+<div class="document {{type}}"
+     [class.unread]="isUnread"
+     [style.backgroundColor]="backgroundColor"
+     [style.borderColor]="borderColor">
+  <document-file-type *ngIf="isGrid"
+                      [file]="file"></document-file-type>
+  <div class="details"
+       [style.borderColor]="borderColor">
+    <h3 [style.color]="headerColor">{{file.fileName}}</h3>
+    <span class="sharedDate">
+      Shared Date: {{sharedDate | date:'shortDate'}}
+    </span>
+    <span *ngIf="!isGrid"
+          class="categories">
+      My Documents, other details
+    </span>
+  </div>
+  <div class="actions"
+       [style.borderColor]="borderColor">
+    <span class="fa fa-download"
+          [style.borderColor]="borderColor"
+          (click)="downloadFile()"></span>
+    <span class="fa fa-cog"
+          [style.borderColor]="borderColor"></span>
+  </div>
+</div>

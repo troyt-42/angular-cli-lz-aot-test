@@ -1,0 +1,8 @@
+<alert [colors]="colors"
+       type="error"
+       class="error-alert"
+       *ngIf="error">
+  <span *ngIf="error.message">{{error.message}}</span>
+  <span *ngIf="!error.message"
+        localize="error"></span>
+</alert>

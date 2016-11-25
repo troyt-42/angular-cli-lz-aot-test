@@ -1,0 +1,6 @@
+<h3>
+  {{description}}
+  <span *ngIf="totalNumberOfUnreadFiles > 0"
+        class="unread"
+        [style.color]="colors.primary">({{totalNumberOfUnreadFiles}})</span>
+</h3>

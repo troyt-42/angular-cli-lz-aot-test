@@ -1,0 +1,19 @@
+<instructions localizedInstructionsKey="instructions"></instructions>
+
+<carousel *ngIf="investingProfile && hasSelectedGoal"
+          [startPosition]="startPosition"
+          cardSectionEqualizer>
+  <investment-strategy *ngFor="let selectableProfile of selectableInvestingProfiles"
+                       #carouselItem
+                       [investingProfile]="selectableProfile"
+                       [colors]="colors"></investment-strategy>
+</carousel>
+
+<div *ngIf="!hasSelectedGoal"
+     namespace="investmentStrategy">
+  <section class="container m2">
+    <h4 class="regular left-align mt2">
+      <span localize="noGoal"></span>
+    </h4>
+  </section>
+</div>

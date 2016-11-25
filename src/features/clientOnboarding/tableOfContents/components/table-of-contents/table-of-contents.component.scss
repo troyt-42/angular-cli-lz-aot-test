@@ -1,0 +1,14 @@
+table-of-contents-item:nth-child(2) .tableOfContentsItemImage {
+  background-position: 0 80% !important;
+}
+
+table-of-contents-item:nth-child(3) .tableOfContentsItemImage {
+  background-position: 0 30% !important;
+}
+
+@media screen and (min-width: 400px) {
+
+  table-of-contents-item:nth-child(3) .tableOfContentsItemImage {
+    background-position: 0 25% !important;
+  }
+}

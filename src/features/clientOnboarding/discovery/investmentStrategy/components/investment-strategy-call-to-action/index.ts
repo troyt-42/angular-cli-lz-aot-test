@@ -1,0 +1,1 @@
+export * from './investment-strategy-call-to-action.component';

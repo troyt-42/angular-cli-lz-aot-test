@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .filter {
+    border-right: 1px solid;
+    padding: 1rem;
+
+    ul {
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      width: 100%;
+      padding: 0;
+      margin: 1rem 0 0 0;
+
+      list-style: none;
+
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease-in-out;
+
+      li {
+        padding: 1rem;
+        cursor: pointer;
+
+        -webkit-tap-highlight-color: transparent;
+
+        &.selected {
+          background-color: rgb(211, 240, 242);
+
+          &:hover {
+            background-color: rgb(211, 240, 242);
+          }
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        &.label {
+          cursor: default;
+          margin-bottom: 0;
+
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

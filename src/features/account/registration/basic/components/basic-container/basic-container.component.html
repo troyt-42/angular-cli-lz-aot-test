@@ -1,0 +1,10 @@
+<loading-container [loadable]="(registration$ | async).verification"
+                   namespace="registration">
+  <div error>
+    <token-expired [colors]="colors$ | async"></token-expired>
+  </div>
+  <div complete>
+    <basic-registration [passwordPolicy]="passwordPolicy$ | async"
+                        [colors]="colors$ | async"></basic-registration>
+  </div>
+</loading-container>

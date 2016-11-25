@@ -1,0 +1,22 @@
+<div class="filter"
+     [style.color]="colors.contentText"
+     [style.borderColor]="colors.primary | darkenColor:5">
+  <div class="icon"
+       [style.color]="colors.primary | darkenColor:20"
+       (click)="toggleShowSorts()">
+    {{documents.sortProperty}}
+    <span class="fa fa-caret-down"></span>
+  </div>
+
+  <ul *ngIf="showSorts"
+      [style.backgroundColor]="colors.contentBackground">
+    <li class="label">
+      <h3>Sort By:</h3>
+    </li>
+    <li *ngFor="let sortPropertyKey of sortPropertyKeys"
+        [class.selected]="isSortPropertyKeySelected(sortPropertyKey)"
+        (click)="setSortPropertyKey(sortPropertyKey)">
+      {{getSortPropertyByKey(sortPropertyKey)}}
+    </li>
+  </ul>
+</div>

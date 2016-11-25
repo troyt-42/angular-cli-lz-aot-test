@@ -1,0 +1,11 @@
+<generic-loading-container [loadable]="documents$ | async">
+  <generic-loading-container [loadable]="documentTypes$ | async">
+    <h2>Documents</h2>
+    <documents-page [authentication]="authentication$ | async"
+                    [documents]="documents$ | async"
+                    [documentTypes]="documentTypes$ | async"
+                    [colors]="colors$ | async"
+                    [style.backgroundColor]="(colors$ | async).contentBackground | lightenColor:10">
+    </documents-page>
+  </generic-loading-container>
+</generic-loading-container>

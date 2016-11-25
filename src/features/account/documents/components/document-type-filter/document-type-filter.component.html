@@ -1,0 +1,29 @@
+<div *ngIf="documentTypes.list.length > 1"
+     class="filter"
+     [style.color]="colors.contentText"
+     [style.borderColor]="colors.primary | darkenColor:5">
+  <document-type-filter-icon [totalNumberOfUnreadDocuments]="totalNumberOfUnreadFiles"
+                             [colors]="colors"
+                             [style.color]="iconTextColor"
+                             (click)="toggleShowDocumentTypes()"></document-type-filter-icon>
+
+  <ul *ngIf="showDocumentTypes"
+      [style.backgroundColor]="colors.contentBackground">
+    <li class="label">
+      <h3>Document Types:</h3>
+    </li>
+    <li *ngFor="let documentType of documentTypes.list"
+        [class.selected]="isDocumentTypeSelected(documentType)"
+        (click)="selectDocumentType(documentType)">
+      <document-type [description]="documentType.description"
+                     [numberOfUnreadDocuments]="getNumberOfUnreadDocumentsForDocumentType(documentType)"
+                     [colors]="colors"></document-type>
+    </li>
+    <li (click)="selectAllDocumentTypes()"
+        [class.selected]="areNoDocumentTypesSelected()">
+      <document-type description="View All"
+                     [numberOfUnreadDocuments]="totalNumberOfUnreadFiles"
+                     [colors]="colors"></document-type>
+    </li>
+  </ul>
+</div>

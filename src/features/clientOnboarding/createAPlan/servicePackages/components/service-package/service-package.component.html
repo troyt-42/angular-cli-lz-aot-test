@@ -1,0 +1,51 @@
+<card [colors]="colors">
+  <card-section class="heading"
+                [ngStyle]="{borderBottom: '2px solid ' + (colors.contentBackground | darkenColor:2)}">
+    <heading [colors]="colors"
+             [bold]="false"
+             [center]="true"
+             bottomMarginClass="m0">
+      <div class="bold mb2" [innerHtml]="servicePackage.name"></div>
+    </heading>
+    <p *ngFor="let description of servicePackage.descriptions; let isLast = last"
+       [ngClass]="{m0: isLast}"
+       [innerHtml]="description">
+    </p>
+  </card-section>
+
+  <card-section class="paymentPlan"
+                headingLocalizationKey="paymentPlanHeading"
+                [backgroundColor]="colors.contentBackground">
+    <h1 class="bold mb2"
+        [innerHtml]="servicePackage.feePercentage | percent"></h1>
+    <p [ngStyle]="{color: colors.contentText | lightenColor: 40}"
+       [innerHtml]="'servicePackages/feeDescription' |
+      localize : (yearlyAmount | currency) : (monthlyFee | currency)">
+    </p>
+    <div class="flex items-center justify-center">
+      <a class="bold text-decoration-none"
+         [ngStyle]="{color: colors.primary}"
+         [href]="servicePackage.detailsUrl"
+         localize="viewFee">
+      </a>
+      <span class="fa fa-file-pdf-o ml1"
+            [ngStyle]="{color: colors.primary}"></span>
+    </div>
+  </card-section>
+
+  <card-section class="features"
+                headingLocalizationKey="featuresHeading">
+    <ul class="list-reset mt1 mb0 mx-auto">
+      <li *ngFor="let feature of servicePackage.features"
+          class="flex items-center py1">
+        <span [ngStyle]="{color: colors.primary}"
+              class="fa fa-check"></span>
+        <h4 class="regular left-align ml2"
+            [ngStyle]="{color: colors.contentText}">{{feature.name}}</h4>
+      </li>
+    </ul>
+  </card-section>
+
+  <service-package-call-to-action [servicePackage]="servicePackage"
+                                  [colors]="colors"></service-package-call-to-action>
+</card>

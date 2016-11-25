@@ -1,0 +1,6 @@
+<generic-loading-container [loadable]="servicePackages$ | async"
+                           namespace="servicePackages">
+  <service-packages-selection [servicePackages]="(servicePackages$ | async).servicePackages"
+                              [colors]="colors$ | async">
+  </service-packages-selection>
+</generic-loading-container>

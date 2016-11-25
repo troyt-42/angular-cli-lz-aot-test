@@ -1,0 +1,7 @@
+<span class="description">{{description}}</span>
+<span *ngIf="numberOfUnreadDocuments > 0"
+      class="unread"
+      [style.color]="colors.primaryText"
+      [style.backgroundColor]="colors.primary">
+  {{numberOfUnreadDocuments}}
+</span>

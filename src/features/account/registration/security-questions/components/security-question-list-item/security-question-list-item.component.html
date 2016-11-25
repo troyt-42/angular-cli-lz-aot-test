@@ -1,0 +1,36 @@
+<hr *ngIf="listItemIndex > 0"
+    [style.color]="colors.contentBackground | darkenColor:7"/>
+<div class="my2">
+  <form [formGroup]="securityQuestionForm">
+    <div class="my1 flex justify-between items-center">
+      <label class="h4"
+             for="question"
+             localize="selectQuestion"></label>
+      <text-button *ngIf="canRemoveQuestions"
+                   [color]="colors.primary"
+                   (onClick)="remove.emit()">
+        <span localize="removeQuestion"></span>
+      </text-button>
+    </div>
+    <div class="flex mb2">
+      <select id="question"
+              class="flex-auto input"
+              formControlName="question"
+              (change)="questionChanged($event.target.value)">
+        <option disabled selected value></option>
+        <option *ngFor="let securityQuestion of questionOptions"
+                [value]="securityQuestion.id">
+          {{securityQuestion.question}}
+        </option>
+      </select>
+    </div>
+
+    <label for="answer"
+           localize="answerLabel"
+           class="block h4 my1"></label>
+    <input id="answer"
+           class="col-12 mb1 input"
+           type="text"
+           formControlName="answer"/>
+  </form>
+</div>

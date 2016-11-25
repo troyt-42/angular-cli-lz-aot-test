@@ -1,0 +1,1 @@
+export * from './model-portfolio-selection.component';

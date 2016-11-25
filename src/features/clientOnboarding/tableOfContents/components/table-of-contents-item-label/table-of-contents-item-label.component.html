@@ -1,0 +1,22 @@
+<div class="tableOfContentsItemLabel {{heightClass}}">
+  <div [style.backgroundImage]="backgroundImage"
+       [ngClass]="{muted: !isActive}"
+       class="tableOfContentsItemImage"></div>
+
+  <div class="tableOfContentsItemContent flex items-start justify-between p2">
+    <div class="flex items-center">
+      <div class="tableOfContentsItemNumber flex items-center justify-center circle p1 h4 regular"
+           [style.color]="colors.primaryText"
+           [style.backgroundColor]="colors.primary">
+        {{number}}
+      </div>
+
+      <h2 class="bold ml2 textShadow"
+          [localize]="text"
+          [style.color]="colors.primaryText"></h2>
+    </div>
+    <h1 *ngIf="isFinished"
+      class="fa fa-check finishedCheckMarkIcon"
+      [style.color]="colors.primary"></h1>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<!-- <img class="portfolioCover"
+     src="assets/model-portfolio-cover.png" />
+
+<heading [center]="true"
+         [colors]="colors">
+  {{modelPortfolio.shortDescription}}
+</heading>
+
+<p>
+  {{modelPortfolio.description}}
+</p>
+ -->
+<table class="cardTable"
+       [style.borderColor]="tableColor">
+  <thead>
+  <tr [style.borderColor]="tableColor"
+      [style.background]="tableColor">
+    <th localize="fundLabel"></th>
+    <th class="fundPercentageHeaderColumn">%</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let fund of modelPortfolio.investmentList"
+      [style.borderColor]="tableColor">
+    <td>{{fund.invDesc}}</td>
+    <td [innerHtml]="fund.invPercent | percent"></td>
+  </tr>
+  </tbody>
+</table>

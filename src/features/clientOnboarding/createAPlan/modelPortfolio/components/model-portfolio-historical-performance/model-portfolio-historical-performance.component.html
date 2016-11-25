@@ -1,0 +1,20 @@
+<table class="cardTable"
+       [style.borderColor]="tableColor">
+  <thead>
+  <tr [style.borderColor]="tableColor"
+      [style.background]="tableColor">
+    <th localize="durationLabel"></th>
+    <th localize="fiveYearLabel"></th>
+    <th localize="tenYearLabel"></th>
+    <th localize="sinceInceptionLabel"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr [style.borderColor]="tableColor">
+    <td localize="performanceLabel"></td>
+    <td [innerHtml]="ror.last60Months | percent"></td>
+    <td [innerHtml]="ror.last120Months | percent"></td>
+    <td [innerHtml]="ror.inception | percent"></td>
+  </tr>
+  </tbody>
+</table>

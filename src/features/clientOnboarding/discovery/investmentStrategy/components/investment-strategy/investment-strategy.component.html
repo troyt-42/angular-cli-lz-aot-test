@@ -1,0 +1,56 @@
+<card id="investmentStrategy"
+      [colors]="colors">
+  <investment-strategy-preamble class="preamble"
+                                [investingProfile]="investingProfile"
+                                [colors]="colors">
+  </investment-strategy-preamble>
+
+  <card-section class="title"
+                [ngStyle]="{borderBottom: '2px solid ' + (colors.contentBackground | darkenColor:2)}">
+    <investment-strategy-title [investingProfile]="investingProfile"
+                               [colors]="colors">
+    </investment-strategy-title>
+  </card-section>
+
+  <card-section class="map">
+    <investment-strategy-map [investingProfile]="investingProfile">
+    </investment-strategy-map>
+  </card-section>
+
+  <investment-strategy-call-to-action [investingProfile]="investingProfile"
+                                      [colors]="colors">
+  </investment-strategy-call-to-action>
+
+  <card-section class="description"
+                [backgroundColor]="colors.contentBackground">
+    <investment-strategy-description [investingProfile]="investingProfile">
+    </investment-strategy-description>
+  </card-section>
+
+  <card-section class="assetAllocation"
+                headingLocalizationKey="assetAllocationHeading">
+    <asset-allocation [labels]="assetAllocationLabels"
+                      [percentages]="assetAllocationPercentages">
+    </asset-allocation>
+
+    <asset-allocation-legend [assetAllocatable]="investingProfile"></asset-allocation-legend>
+
+    <p class="m0">{{investingProfile.assetAllocationDescription}}</p>
+  </card-section>
+
+  <card-section class="risk"
+                headingLocalizationKey="riskHeading"
+                [backgroundColor]="colors.contentBackground">
+    <risk [investingProfile]="investingProfile"
+          [colors]="colors"></risk>
+  </card-section>
+
+  <card-section class="investorInterest"
+                headingLocalizationKey="investorInterestHeading">
+    <investor-interest [percentage]="investingProfile.investorInterestPercentage">
+    </investor-interest>
+  </card-section>
+
+  <investment-strategy-call-to-action [investingProfile]="investingProfile"
+                                      [colors]="colors"></investment-strategy-call-to-action>
+</card>

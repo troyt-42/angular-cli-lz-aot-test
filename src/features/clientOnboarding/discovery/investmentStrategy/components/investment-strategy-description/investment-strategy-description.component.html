@@ -1,0 +1,4 @@
+<p *ngFor="let description of investingProfile.descriptions; let isLast = last"
+   [ngClass]="{m0: isLast}"
+   [innerHtml]="description | highlight: investingProfile.name.toLowerCase()">
+</p>

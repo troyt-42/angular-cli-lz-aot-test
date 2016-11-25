@@ -1,0 +1,1 @@
+export * from './investment-strategy-map.component';

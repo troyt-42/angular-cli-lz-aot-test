@@ -1,0 +1,48 @@
+:host {
+  .tableOfContentsItemLabel {
+    position: relative;
+    overflow: hidden;
+
+    .tableOfContentsItemImage,
+    .tableOfContentsItemContent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: inherit;
+    }
+
+    .tableOfContentsItemImage {
+      background: no-repeat center;
+      background-size: cover;
+
+      z-index: 1;
+    }
+
+    .tableOfContentsItemContent {
+      z-index: 2;
+
+      .tableOfContentsItemNumber {
+        width: 45px;
+        height: 45px;
+      }
+
+      .textShadow {
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+      }
+
+      .finishedCheckMarkIcon {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  .tableOfContentsItemLabel.large {
+    height: 170px;
+  }
+
+  .tableOfContentsItemLabel.small {
+    height: 80px;
+  }
+}

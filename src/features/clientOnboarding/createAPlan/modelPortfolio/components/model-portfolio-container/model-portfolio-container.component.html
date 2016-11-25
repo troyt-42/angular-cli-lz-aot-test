@@ -1,0 +1,5 @@
+<generic-loading-container [loadable]="modelPortfolio$ | async"
+                           namespace="modelPortfolio">
+  <model-portfolio-selection [modelPortfolios]="[modelPortfolio$ | async]"
+                             [colors]="colors$ | async"></model-portfolio-selection>
+</generic-loading-container>

@@ -1,0 +1,16 @@
+:host {
+  .content {
+    .title {
+      margin-bottom: 2rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.1rem;
+  }
+}

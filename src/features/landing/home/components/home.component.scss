@@ -1,0 +1,71 @@
+@import "../../../../styles/variables";
+
+:host {
+  .body {
+    height: calc(100vh - #{$navigationHeight} - #{$footerHeight});
+    background-image: url(/assets/landing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .overlay,
+    .content {
+      height: calc(100vh - #{$navigationHeight} - #{$footerHeight});
+      width: 100%;
+      position: absolute;
+    }
+
+    .overlay {
+      z-index: 1;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+
+      .landing-heading {
+        text-align: center;
+        font-size: 35px;
+        max-width: 350px;
+      }
+
+      .textShadow {
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) and (orientation: landscape) {
+  .landing-heading {
+    margin-bottom: 0;
+  }
+
+  .l-heading-lh {
+    line-height: 120%;
+  }
+
+  .l-button-mt {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-height: 140px) and (max-height: 360px) {
+  .lt-heading-sm {
+    font-size: 25px !important;
+    max-width: none !important;
+    margin-bottom: 5px;
+  }
+
+  .lt-subheading-mt {
+    margin-top: 0;
+  }
+
+  .l-button-mt {
+    margin-top: 1rem;
+  }
+}

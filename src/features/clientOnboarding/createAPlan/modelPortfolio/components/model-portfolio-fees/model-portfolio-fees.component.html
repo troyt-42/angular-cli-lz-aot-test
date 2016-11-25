@@ -1,0 +1,22 @@
+<card-section-header>
+  <span localize="overallFeeLabel"></span>: 
+  <span [innerHtml]="totalFeePercentage | percent"></span>
+</card-section-header>
+
+<table class="cardTable"
+       [style.borderColor]="tableColor">
+  <thead>
+  <tr [style.borderColor]="tableColor"
+      [style.background]="tableColor">
+    <th localize="fundLabel"></th>
+    <th localize="fundPercentageLabel"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let fund of funds"
+      [style.borderColor]="tableColor">
+    <td>{{fund.invDesc}}</td>
+    <td [innerHtml]="fund.feePercent | percent"></td>
+  </tr>
+  </tbody>
+</table>

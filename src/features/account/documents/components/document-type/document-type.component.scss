@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .unread {
+    border-radius: 100rem;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    padding-top: 0.35rem;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,24 @@
+<card class="width-100"
+      [colors]="colors">
+  <form [formGroup]="forgotUsernameForm"
+        (ngSubmit)="submit()"
+        class="width-100">
+    <div class="width-100 flex flex-column items-start px2 py3">
+      <label for="email"
+             localize="email"
+             class="mb1"></label>
+      <input id="email"
+             class="col-12 mb1 input"
+             type="text"
+             formControlName="email" />
+    </div>
+  </form>
+</card>
+
+<button-control [showChevron]="false"
+                (onClick)="submit()"
+                [disabled]="!forgotUsernameForm.valid"
+                width="100%"
+                className="h4 regular px3 py2">
+  <span localize="findUsername"></span>
+</button-control>

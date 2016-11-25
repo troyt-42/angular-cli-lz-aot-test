@@ -1,0 +1,33 @@
+<content-layout [colors]="colors"
+                [mainPadding]="true"
+                [hasFooter]="true"
+                namespace="questionnaire">
+  <div content
+       class="content">
+    <question [model]="currentQuestion"
+              [answer]="currentAnswer"
+              [colors]="colors"
+              (answerChanged)="onAnswerChanged($event)"
+              class="mb4"></question>
+  </div>
+  <div footer>
+    <progress value="{{currentQuestionIndex + 1}}"
+              max="{{questions.length}}"
+              class="progress col-12 mb1"
+              [ngStyle]="{color: colors.primary}">
+    </progress>
+    <nav class="flex justify-between items-center">
+      <footer-navigation-button [colors]="colors"
+                                (click)="goToPreviousQuestion()">
+        <span localize="back"></span>
+      </footer-navigation-button>
+      <span [innerHtml]="'questionnaire/questionNumber' |
+            localize : currentQuestionIndex + 1 : questions.length"></span>
+      <footer-navigation-button [disabled]="!isCurrentQuestionAnswered()"
+                                [colors]="colors"
+                                (click)="isCurrentQuestionAnswered() && goToNextQuestion()">
+        <span [localize]="nextButtonLabel"></span>
+      </footer-navigation-button>
+    </nav>
+  </div>
+</content-layout>

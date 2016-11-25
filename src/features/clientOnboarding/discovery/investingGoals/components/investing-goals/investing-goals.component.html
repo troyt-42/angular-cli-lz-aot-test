@@ -1,0 +1,31 @@
+<content-layout [colors]="colors"
+                [mainPadding]="true"
+                [hasFooter]="true">
+  <div content
+       class="content">
+    <heading [colors]="colors"
+             bottomMarginClass="mb2"
+             fontSizeClass="h3">
+      <span localize="subheading"></span>
+    </heading>
+
+    <ul class="list-reset m0 mb2">
+      <li *ngFor="let investingGoal of investingGoalsArray"
+          class="block col-12 mb1"
+          (click)="selectInvestingGoal(investingGoal)">
+        <investing-goal [model]="investingGoal"
+                        [isSelected]="isSelected(investingGoal)"
+                        [colors]="colors">
+        </investing-goal>
+      </li>
+    </ul>
+  </div>
+  <nav footer
+       class="flex justify-end items-center">
+    <footer-navigation-button [disabled]="!hasSelectedInvestingGoal"
+                              [colors]="colors"
+                              (click)="hasSelectedInvestingGoal && navigateToQuestionnaire()">
+      <span localize="next"></span>
+    </footer-navigation-button>
+  </nav>
+</content-layout>

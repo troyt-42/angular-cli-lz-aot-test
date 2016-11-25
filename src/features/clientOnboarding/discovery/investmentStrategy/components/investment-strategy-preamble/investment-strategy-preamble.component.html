@@ -1,0 +1,8 @@
+<div [style.background]="backgroundColor"
+     [style.color]="color"
+     class="flex justify-center items-center p2 bold height-100">
+  <span *ngIf="isPrimaryProfile"
+        localize="primaryStrategyPreamble"></span>
+  <span *ngIf="!isPrimaryProfile"
+        localize="alternativeStrategyPreamble"></span>
+</div>

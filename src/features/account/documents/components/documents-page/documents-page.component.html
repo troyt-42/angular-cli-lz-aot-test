@@ -1,0 +1,19 @@
+<documents-options [documents]="documents"
+                   [documentTypes]="documentTypes"
+                   [colors]="colors"
+                   [style.backgroundColor]="colors.primary">
+</documents-options>
+
+<selected-document-type [documentTypes]="documentTypes"
+                        [colors]="colors">
+</selected-document-type>
+
+<documents-listing [documents]="documents"
+                   [documentType]="documentTypes.selectedCode"
+                   [colors]="colors"></documents-listing>
+
+<!--
+<max-results-selector [documents]="documents"
+                      [colors]="colors"></max-results-selector>
+<page-navigation [documents]="documents"></page-navigation>
+-->

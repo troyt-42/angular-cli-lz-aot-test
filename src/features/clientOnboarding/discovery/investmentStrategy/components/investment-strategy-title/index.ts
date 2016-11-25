@@ -1,0 +1,1 @@
+export * from './investment-strategy-title.component';

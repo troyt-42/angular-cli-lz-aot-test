@@ -1,0 +1,9 @@
+<text-button [disabled]="isPreviousDisabled"
+             (click)="!isPreviousDisabled && viewPreviousPage()">
+  <span class="fa fa-caret-left"></span>
+</text-button>
+<span>Page {{documents.currentPage}}</span>
+<text-button [disabled]="isNextDisabled"
+             (click)="!isNextDisabled && viewNextPage()">
+  <span class="fa fa-caret-right"></span>
+</text-button>

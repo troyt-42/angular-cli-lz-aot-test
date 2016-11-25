@@ -1,0 +1,23 @@
+<div class="riskMeter mb2">
+  <span *ngFor="let risk of sortedRisks"
+        [style.width.%]="risk.percent"
+        [style.backgroundColor]="getRiskColor(risk)">
+
+  </span>
+</div>
+
+<table class="riskLegend">
+  <tbody>
+    <tr *ngFor="let risk of sortedRisks">
+      <td [style.backgroundColor]="getRiskColor(risk)"
+          class="color"></td>
+      <td class="percent"
+        [innerHtml]="risk.percent | percent"></td>
+      <td class="description">{{risk.description}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="m0">
+  {{investingProfile.riskDescription}}
+</p>

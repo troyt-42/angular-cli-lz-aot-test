@@ -1,0 +1,27 @@
+@import '../../../../styles/variables';
+
+:host {
+  display: block;
+
+  > side-navigation {
+    button-control {
+      width: 100%;
+      display: block;
+      padding: 1rem;
+    }
+  }
+
+  > content-layout {
+    navigator {
+      logo {
+        cursor: pointer;
+      }
+    }
+  }
+
+  user-badge {
+    @media screen and (max-width: $tabletWidth) {
+      display: none;
+    }
+  }
+}

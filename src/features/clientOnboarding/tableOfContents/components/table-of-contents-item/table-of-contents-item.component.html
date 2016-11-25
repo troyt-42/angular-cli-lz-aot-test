@@ -1,0 +1,40 @@
+<div *ngIf="item.isActive"
+     class="tableOfContentsItem">
+
+  <table-of-contents-item-label [number]="item.state.number"
+                                [text]="item.state.label"
+                                [isActive]="item.isActive"
+                                [colors]="colors$ | async"></table-of-contents-item-label>
+
+  <div class="p2">
+    <h4 class="regular line-height-4"
+        [localize]="item.state.text"
+        [ngStyle]="{color: (colors$ | async).contentText}"></h4>
+
+    <div class="pb2">
+      <table-of-contents-item-steps [steps]="item.steps"></table-of-contents-item-steps>
+    </div>
+
+    <div class="mt1 flex justify-end">
+      <h4 class="regular muted py1 mr2"
+          [localize]="item.state.time"
+          [ngStyle]="{color: contentTextColor$ | async}"></h4>
+      <button-control [showChevron]="true"
+                      (onClick)="item.action(item.steps)">
+        <span [localize]="isStarted ? 'buttonLabelContinue' : 'buttonLabelBegin'"></span>
+      </button-control>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!item.isActive"
+     [routerLink]="item.state.url"
+     [ngStyle]="{pointerEvents: isFinished ? 'auto' : 'none'}"
+     [ngClass]="{cursor: isFinished}"
+     class="tableOfContentsItem">
+  <table-of-contents-item-label [number]="item.state.number"
+                                [text]="item.state.label"
+                                [isActive]="item.isActive"
+                                [isFinished]="isFinished"
+                                [colors]="colors$ | async"></table-of-contents-item-label>
+</div>

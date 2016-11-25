@@ -1,0 +1,34 @@
+<content-layout [colors]="colors"
+                [hasFooter]="true"
+                namespace="landing">
+  <navigator header
+             testid="navigator"
+             justify="center"
+             color="white">
+    <logo></logo>
+  </navigator>
+  <div content
+       class="body">
+    <div class="overlay"></div>
+    <div class="content">
+      <p class="landing-heading regular text-center white m0 mt2 l-heading-lh lt-heading-sm"
+         localize="heading"></p>
+
+      <h4 class="regular white center mt2 textShadow lt-subheading-mt"
+          localize="subheading"></h4>
+
+      <button-control [showChevron]="false"
+                      (click)="getStarted()"
+                      class="mt4 l-button-mt"
+                      className="h4 regular px3 py2">
+        <span [localize]="buttonLabelKey"></span>
+      </button-control>
+    </div>
+  </div>
+  <div footer
+       class="p2 footer-height"
+       [ngStyle]="{backgroundColor: (colors$ | async).contentBackground}">
+    <locale-selector [localeRepository]="localeRepository$ | async"
+                     [colors]="colors$ | async"></locale-selector>
+  </div>
+</content-layout>

@@ -1,0 +1,44 @@
+<!-- <side-navigation *ngIf="isLoggedIn"
+                 [show]="showNavigation"
+                 [colors]="colors"
+                 (showChanges)="onShowManagementNavigationChanges($event)">
+  <user-info [user]="authentication.user"
+             [colors]="colors"></user-info>
+  <side-navigation-item-container [footer]="false">
+    <side-navigation-item uri="/account/dashboard"
+                          (click)="hideSideNavigation()">
+      Dashboard
+    </side-navigation-item>
+    <side-navigation-item uri="/account/documents"
+                          (click)="hideSideNavigation()">
+      Documents
+    </side-navigation-item>
+  </side-navigation-item-container>
+  <side-navigation-item-container [footer]="true"
+                                  [colors]="colors">
+    <button-control width="100%"
+                    (click)="logout()">Log Out</button-control>
+  </side-navigation-item-container>
+</side-navigation>
+
+<content-layout [colors]="colors">
+  <navigator header
+             testid="navigator"
+             justify="center"
+             color="white">
+    <hamburger-button *ngIf="isLoggedIn"
+                      [showMenu]="showNavigation"
+                      [colors]="colors"
+                      (showMenuChanges)="onShowManagementNavigationChanges($event)">
+    </hamburger-button>
+    <logo routerLink="/"></logo>
+    <user-badge *ngIf="isLoggedIn"
+                [user]="authentication.user"></user-badge>
+  </navigator>
+
+  <div content
+       [style.color]="colors.contentText">
+    <router-outlet></router-outlet>
+    <univeris-footer [colors]="colors"></univeris-footer>
+  </div>
+</content-layout> -->

@@ -1,0 +1,15 @@
+@import '../../../../../../styles/variables';
+
+:host {
+  display: block;
+
+  nav {
+    height: $footerHeight;
+
+    span {
+      @media only screen and (max-device-width: 667px){
+        font-size: 3.5vmin;
+      }
+    }
+  }
+}

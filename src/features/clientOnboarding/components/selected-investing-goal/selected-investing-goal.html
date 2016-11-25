@@ -1,0 +1,12 @@
+<h5 namespace="clientOnboarding"
+    [ngStyle]="{color: (colors$ | async).contentText}"
+    class="regular ml2">
+  <div *ngIf="!hasSelectedInvestingGoal"
+       localize="heading"
+       class="heading">
+  </div>
+  <div *ngIf="hasSelectedInvestingGoal"
+       class="heading">
+    {{'clientOnboarding/' + heading | localize:(selectedInvestingGoalName | lowercase)}}
+  </div>
+</h5>

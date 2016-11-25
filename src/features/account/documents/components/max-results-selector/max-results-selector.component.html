@@ -1,0 +1,8 @@
+<ul [style.borderColor]="colors.contentText | lightenColor:40">
+  <li *ngFor="let value of MaxResultValues"
+      [class.selected]="isSelected(value)"
+      (click)="setResultsPerPage(value)">
+    <text-button [color]="colors.contentText"
+                 [style.borderColor]="colors.primary">{{value}} per page</text-button>
+  </li>
+</ul>

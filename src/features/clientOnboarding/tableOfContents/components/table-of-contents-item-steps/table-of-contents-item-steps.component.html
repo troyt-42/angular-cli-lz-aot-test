@@ -1,0 +1,17 @@
+<ul *ngIf="hasSteps()"
+    class="list-reset pt2 m0">
+  <li *ngFor="let step of steps"
+      [ngClass]="{cursor: step.isDone}"
+      (click)="step.isDone && step.navigateTo()"
+      class="flex justify-start content-center h5 regular m1">
+    <span *ngIf="step.isDone"
+        class="fa fa-check step-icon step-check-icon"
+        [ngStyle]="{color: (colors$ | async).primary}"></span>
+    <span *ngIf="!step.isDone"
+        class="fa fa-circle step-icon step-circle-icon"
+        [ngStyle]="{color: (colors$ | async).primary}"></span>
+    <span class="ml1">
+      {{'tableOfContents/' + step.label | localize}}
+    </span>
+  </li>
+</ul>
