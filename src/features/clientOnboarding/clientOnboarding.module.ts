@@ -60,7 +60,6 @@ import {EffectsModule} from '@ngrx/effects';
     EffectsModule.run(QuestionnaireEffects),
     EffectsModule.run(ServicePackageEffects),
     EffectsModule.run(SignUpEffects),
-    
   ],
   declarations: [
     ClientOnboardingLayoutComponent,

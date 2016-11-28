@@ -1,0 +1,48 @@
+/* Commented out for AoT compatibility */
+// // Basscss
+@import "~basscss-type-scale/index";
+@import "~basscss-typography/index";
+@import "~basscss-layout/index";
+@import "~basscss-align/index";
+@import "~basscss-margin/index";
+@import "~basscss-grid/index";
+@import "~basscss-flexbox/index";
+@import "~basscss-position/index";
+@import "~basscss-border/index";
+@import "~basscss-hide/index";
+@import "~basscss-addons/modules/background-colors/index";
+@import "~basscss-addons/modules/background-images/index";
+@import "~basscss-addons/modules/border-colors/index";
+@import "~basscss-addons/modules/btn/index";
+@import "~basscss-addons/modules/btn-outline/index";
+@import "~basscss-addons/modules/btn-primary/index";
+@import "~basscss-addons/modules/btn-sizes/index";
+@import "~basscss-addons/modules/colors/index";
+@import "~basscss-addons/modules/darken/index";
+@import "~basscss-addons/modules/forms/index";
+@import "~basscss-addons/modules/input-range/index";
+@import "~basscss-addons/modules/highlight/index";
+@import "~basscss-addons/modules/lighten/index";
+@import "~basscss-addons/modules/media-object/index";
+@import "~basscss-addons/modules/progress/index";
+@import "~basscss-addons/modules/responsive-layout/index";
+@import "~basscss-addons/modules/responsive-margin/index";
+@import "~basscss-addons/modules/responsive-padding/index";
+@import "~basscss-addons/modules/responsive-position/index";
+@import "~basscss-addons/modules/responsive-type-scale/index";
+@import "~basscss-addons/modules/responsive-typography/index";
+@import "~basscss-padding/index";
+
+// Main
+@import "variables";
+@import "base";
+@import "components/components";
+@import "pipes/pipes";
+@import "utilities/utilities";
+
+// Font
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+
+//Import global styles here for AoT
+@import '../components/carousel/carousel.component.scss';
+@import '../features/clientOnboarding/tableOfContents/components/table-of-contents/table-of-contents.component.scss';

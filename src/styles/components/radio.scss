@@ -1,0 +1,9 @@
+.check {
+  height: 12px;
+  transition: all 150ms ease-in-out;
+  width: 12px;
+}
+
+li:hover .check {
+  opacity: 0.9;
+}
