@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {origin} from '../../configuration';
 import {AppState} from '../../models/appState';
 
 const slash = (relative: string): string => {
@@ -16,8 +15,6 @@ const slash = (relative: string): string => {
 const getHost = (hostname?: string) => {
   if (hostname) {
     return hostname;
-  } else if (origin) {
-    return `${location.protocol}//${origin}`;
   }
 
   return `${location.protocol}//${location.host}`;
