@@ -1,13 +1,13 @@
 <instructions localizedInstructionsKey="instructions"></instructions>
 
-<carousel *ngIf="investingProfile && hasSelectedGoal"
+<!-- <carousel *ngIf="investingProfile && hasSelectedGoal"
           [startPosition]="startPosition"
           cardSectionEqualizer>
   <investment-strategy *ngFor="let selectableProfile of selectableInvestingProfiles"
                        #carouselItem
                        [investingProfile]="selectableProfile"
                        [colors]="colors"></investment-strategy>
-</carousel>
+</carousel> -->
 
 <div *ngIf="!hasSelectedGoal"
      namespace="investmentStrategy">
